@@ -16,7 +16,7 @@ function App() {
   return (
     <div id ="app-container">
       <video autoPlay loop muted id="background-video">
-        <source src="/videos/bg.mp4" type="video/mp4" />
+        <source src="/FarmBuddy-frontend/videos/bg.mp4" type="video/mp4" />
       </video>
       <h1>Welcome to FarmBuddy</h1>
       {!isLoggedIn ? (
