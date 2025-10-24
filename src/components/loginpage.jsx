@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { loginUser, isEmailVerified } from '../firebaseAuth';
-import ForgotPassword from './ForgotPassword';
 
 function LoginPage({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [showForgot, setShowForgot] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -43,13 +41,9 @@ function LoginPage({ onLogin }) {
           required
         />
         <br />
-        <button type="submit">Sign in</button>
+        <button type="submit">Sign In</button>
       </form>
-      <button onClick={() => setShowForgot(true)} style={{marginTop: "10px"}}>
-        Forgot Password?
-      </button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {showForgot && <ForgotPassword onClose={() => setShowForgot(false)} />}
     </div>
   );
 }
